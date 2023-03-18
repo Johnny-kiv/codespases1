@@ -1,16 +1,43 @@
 <head>
     <title>{{ title }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
-
+    <div class="loader">
+        <div class="loader__bar"></div>
+        <div class="loader__bar"></div>
+        <div class="loader__bar"></div>
+        <div class="loader__bar"></div>
+        <div class="loader__bar"></div>
+        <div class="loader__ball"></div>
+      </div>
+    </div>
 <body>
+    <div class="preloader-1">
+        <svg>
+            <g>
+                <path d="M 50,100 A 1,1 0 0 1 50,0"/>
+            </g>
+            <g>
+                <path d="M 50,75 A 1,1 0 0 0 50,-25"/>
+            </g>
+            <defs>
+                <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#BFE2FF;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#337AB7;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+        </svg>
+    </div>
+    <script>
+        window.onload = function() {
+            document.querySelector('.preloader-1').classList.add("preloader-1-remove");
+        };
+
+    </script>
     <div class="App">
         <header class="App-header">
-            <img src="{{ url_for('static', filename='Octocat.png') }}" class="App-logo" alt="logo" />
+            <img src="{{ url_for('static', filename='logo.jpg') }}" class="App-logo" alt="logo" />
             <p>
-                GitHub Codespaces <span class="heart">♥️</span> Flask
-            </p>
-            <p class="small">
-                Edit <code>templates/index.html</code> and refresh to see your changes!
+                Hello!<span class="heart">🤣</span> This is site on Flask! <span class="heart">❤️</span>
             </p>
         </header>
     </div>
